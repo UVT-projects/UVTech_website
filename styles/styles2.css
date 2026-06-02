@@ -1115,6 +1115,16 @@ footer {
   margin-top: 0.35rem;
 }
 
+.countdown-live-msg {
+  font-family: 'Dosis', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #b8ff3c;
+  margin-bottom: 0.75rem;
+}
+
 @media (max-width: 640px) {
   .countdown-num  { font-size: 1.8rem; }
   .countdown-item { padding: 0.75rem 1.1rem; min-width: 64px; }

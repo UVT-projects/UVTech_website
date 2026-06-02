@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UVTech Fest 2026 — Universitatea de Vest din Timisoara</title>
-  <link rel="stylesheet" href="styles2.css">
+  <link rel="stylesheet" href="styles/styles2.css">
 </head>
 <body>
 
@@ -209,28 +209,6 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      var target = new Date('2026-06-06T10:00:00');
-      var elDays  = document.getElementById('cd-days');
-      var elHours = document.getElementById('cd-hours');
-      var elMins  = document.getElementById('cd-mins');
-      var elSecs  = document.getElementById('cd-secs');
-      function pad(n) { return String(n).padStart(2, '0'); }
-      function tick() {
-        var diff = target - Date.now();
-        if (diff <= 0) {
-          document.getElementById('countdown').setAttribute('hidden', '');
-          return;
-        }
-        elDays.textContent  = pad(Math.floor(diff / 86400000));
-        elHours.textContent = pad(Math.floor((diff % 86400000) / 3600000));
-        elMins.textContent  = pad(Math.floor((diff % 3600000)  / 60000));
-        elSecs.textContent  = pad(Math.floor((diff % 60000)    / 1000));
-      }
-      tick();
-      setInterval(tick, 1000);
-    }());
-  </script>
+  <script src="scripts/countdown.js"></script>
 </body>
 </html>
