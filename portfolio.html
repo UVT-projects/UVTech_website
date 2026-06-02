@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — UVTech Fest 2026</title>
+  <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Sari la continut</a>
+
+  <header>
+    <a href="index.html" class="site-brand">
+      <span class="brand-name">UVTech Fest</span>
+      <span class="brand-year">2026</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="archive.html">Archive</a></li>
+        <li><a href="overview.html">Overview</a></li>
+        <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+        <li><a href="chatbot.html">AMA</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="auth.html" class="nav-logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="section" style="padding-top: 140px; padding-bottom: 60px;">
+      <div class="section-inner">
+        <p class="eyebrow">Proiectele tale</p>
+        <h1 style="font-size: 4.5rem; margin-bottom: 1.5rem; line-height: 1.1;">
+          Portofoliul<br>tau <span style="color: #b8ff3c;">tech.</span>
+        </h1>
+        <p class="section-lead">Adauga-ti proiectele, construieste-ti portofoliul si prezinta-le la UVTech Fest 2026.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="section-inner">
+        <p class="eyebrow">Adauga</p>
+        <h2>Adauga Proiect</h2>
+
+        <form id="portfolio-form" novalidate aria-label="Formular adaugare proiect">
+
+          <fieldset>
+            <legend>Informatii Proiect</legend>
+
+            <div class="form-group">
+              <label for="project-name">Numele proiectului <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="project-name" name="project-name"
+                     required aria-required="true"
+                     aria-describedby="err-project-name"
+                     placeholder="ex. Task Manager App">
+              <span class="field-error" id="err-project-name" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="project-desc">Descriere <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="project-desc" name="project-desc" rows="4"
+                        required aria-required="true"
+                        aria-describedby="hint-project-desc err-project-desc"
+                        placeholder="Descrie pe scurt ce face proiectul tau..."></textarea>
+              <span class="field-hint" id="hint-project-desc">Minim 20 de caractere.</span>
+              <span class="field-error" id="err-project-desc" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="project-url">URL proiect <span class="req" aria-hidden="true">*</span></label>
+              <input type="url" id="project-url" name="project-url"
+                     required aria-required="true"
+                     aria-describedby="err-project-url"
+                     placeholder="https://github.com/tu/proiect">
+              <span class="field-error" id="err-project-url" aria-live="polite"></span>
+            </div>
+
+          </fieldset>
+
+          <fieldset>
+            <legend>Detalii Tehnice</legend>
+
+            <div class="form-group">
+              <label for="project-category">Categoria principala <span class="req" aria-hidden="true">*</span></label>
+              <select id="project-category" name="project-category"
+                      required aria-required="true"
+                      aria-describedby="err-project-category">
+                <option value="">-- Selecteaza categoria --</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Mobile Development">Mobile Development</option>
+                <option value="AI / Machine Learning">AI / Machine Learning</option>
+                <option value="Cybersecurity">Cybersecurity</option>
+                <option value="Cloud / DevOps">Cloud / DevOps</option>
+                <option value="Open Source">Open Source</option>
+                <option value="Design / UI-UX">Design / UI-UX</option>
+                <option value="Game Development">Game Development</option>
+                <option value="Altele">Altele</option>
+              </select>
+              <span class="field-error" id="err-project-category" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="project-tech">Tehnologii folosite <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="project-tech" name="project-tech"
+                     required aria-required="true"
+                     aria-describedby="hint-project-tech err-project-tech"
+                     placeholder="ex. React, Node.js, PostgreSQL">
+              <span class="field-hint" id="hint-project-tech">Separa tehnologiile prin virgula.</span>
+              <span class="field-error" id="err-project-tech" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="project-img">URL imagine / thumbnail</label>
+              <input type="url" id="project-img" name="project-img"
+                     aria-describedby="hint-project-img err-project-img"
+                     placeholder="https://example.com/screenshot.png">
+              <span class="field-hint" id="hint-project-img">Optional. URL public al unei imagini reprezentative.</span>
+              <span class="field-error" id="err-project-img" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="project-date">Data finalizarii <span class="req" aria-hidden="true">*</span></label>
+              <input type="date" id="project-date" name="project-date"
+                     required aria-required="true"
+                     aria-describedby="err-project-date">
+              <span class="field-error" id="err-project-date" aria-live="polite"></span>
+            </div>
+
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">Save</button>
+            <button type="reset" class="btn-reset">Reset</button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <section id="projects-section" class="section" hidden>
+      <div class="section-inner">
+        <p class="eyebrow">Lista</p>
+        <h2>Proiecte</h2>
+        <div class="table-wrapper">
+          <table id="projects-table">
+            <caption>Proiectele tale inregistrate</caption>
+            <thead>
+              <tr>
+                <th scope="col">Proiect</th>
+                <th scope="col">Descriere</th>
+                <th scope="col">URL</th>
+                <th scope="col">Tehnologii</th>
+                <th scope="col">Imagine</th>
+                <th scope="col">Data finalizarii</th>
+                <th scope="col">Actiuni</th>
+              </tr>
+            </thead>
+            <tbody id="projects-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-brand">UVTech Fest 2026</span>
+      <nav class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="archive.html">Archive</a>
+        <a href="overview.html">Overview</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="chatbot.html">AMA</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">
+        Creat de studentii Universitatii de Vest din Timisoara — 2026
+      </p>
+    </div>
+  </footer>
+
+  <script src="portfolio.js"></script>
+</body>
+</html>
