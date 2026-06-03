@@ -15,7 +15,12 @@
       <span class="brand-name">UVTech Fest</span>
       <span class="brand-year">2026</span>
     </a>
-    <nav>
+    <button class="nav-toggle" aria-label="Deschide meniu" aria-expanded="false" aria-controls="main-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav id="main-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" aria-current="page">About</a></li>
@@ -34,7 +39,7 @@
     <section class="section" style="padding-top: 140px; padding-bottom: 60px;">
       <div class="section-inner">
         <p class="eyebrow">Evenimentul</p>
-        <h1 style="font-size: 4rem; margin-bottom: 1.5rem; line-height: 1.1;">Mai mult decat<br><span style="color: #b8ff3c;">o conferinta.</span></h1>
+        <h1 class="page-hero-title" style="margin-bottom: 1.5rem; line-height: 1.1;">Mai mult decat<br><span style="color: #b8ff3c;">o conferinta.</span></h1>
         <p class="section-lead">UVTech Fest este punctul de intilnire pentru studenti, cercetatori si lideri din industrie, organizat anual la Timisoara.</p>
       </div>
     </section>
@@ -133,6 +138,7 @@
       </p>
     </div>
   </footer>
+  <script src="scripts/nav.js"></script>
 
 </body>
 </html>

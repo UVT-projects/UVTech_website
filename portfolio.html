@@ -15,7 +15,12 @@
       <span class="brand-name">UVTech Fest</span>
       <span class="brand-year">2026</span>
     </a>
-    <nav>
+    <button class="nav-toggle" aria-label="Deschide meniu" aria-expanded="false" aria-controls="main-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav id="main-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -34,7 +39,7 @@
     <section class="section" style="padding-top: 140px; padding-bottom: 60px;">
       <div class="section-inner">
         <p class="eyebrow">Proiectele tale</p>
-        <h1 style="font-size: 4.5rem; margin-bottom: 1.5rem; line-height: 1.1;">
+        <h1 class="page-hero-title" style="margin-bottom: 1.5rem; line-height: 1.1;">
           Portofoliul<br>tau <span style="color: #b8ff3c;">tech.</span>
         </h1>
         <p class="section-lead">Adauga-ti proiectele, construieste-ti portofoliul si prezinta-le la UVTech Fest 2026.</p>
@@ -147,7 +152,7 @@
         <h2>Proiecte</h2>
         <div class="table-wrapper">
           <table id="projects-table">
-            <caption>Proiectele tale inregistrate</caption>
+            <caption>Proiecte inregistrate</caption>
             <thead>
               <tr>
                 <th scope="col">Proiect</th>
@@ -186,5 +191,6 @@
   </footer>
 
   <script src="scripts/portfolio.js"></script>
+  <script src="scripts/nav.js"></script>
 </body>
 </html>

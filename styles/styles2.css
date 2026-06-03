@@ -134,6 +134,52 @@ nav {
   margin-left: auto;
 }
 
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: auto;
+  color: #e8e9f0;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.nav-toggle:hover {
+  background: #181929;
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid #b8ff3c;
+  outline-offset: 2px;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+header.nav-open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+header.nav-open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+header.nav-open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -613,6 +659,7 @@ label {
 
 input[type="text"],
 input[type="email"],
+input[type="password"],
 input[type="url"],
 input[type="date"],
 select,
@@ -629,8 +676,6 @@ textarea {
 }
 
 input:focus,
-input[type="url"]:focus,
-input[type="date"]:focus,
 select:focus,
 textarea:focus {
   outline: none;
@@ -1014,8 +1059,40 @@ footer {
 
 @media (max-width: 640px) {
   header { padding: 0 1rem; }
-  nav a { padding: 0.4rem 0.6rem; font-size: 0.82rem; }
   .brand-name { font-size: 1.1rem; }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  header nav {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    background: rgba(11, 12, 19, 0.97);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid #252640;
+    padding: 0.75rem 1rem;
+    z-index: 99;
+  }
+
+  header.nav-open nav {
+    display: block;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  header nav a {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+  }
 
   .section { padding: 48px 1.25rem; }
   .hero { padding: 92px 1.25rem 3rem; }
@@ -1076,6 +1153,14 @@ footer {
   .stats-strip .stat + .stat {
     border-top: 1px solid #252640;
   }
+}
+
+.page-hero-title {
+  font-size: 4rem;
+}
+
+@media (max-width: 640px) {
+  .page-hero-title { font-size: 2.4rem; }
 }
 
 /* ── Countdown ───────────────────────────────────────────── */
@@ -1216,6 +1301,51 @@ select[aria-invalid="true"] {
 .btn-edit-row:focus-visible {
   outline: 2px solid #b8ff3c;
   outline-offset: 2px;
+}
+
+/* ── Projects table — responsive card layout ─────────────── */
+@media (max-width: 640px) {
+  #projects-table thead {
+    display: none;
+  }
+
+  #projects-table tbody tr {
+    display: block;
+    border: 1px solid #252640;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background: #181929;
+  }
+
+  #projects-table tbody tr:hover {
+    background: #1f2035;
+  }
+
+  #projects-table tbody tr td {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(37, 38, 64, 0.6);
+    font-size: 0.9rem;
+  }
+
+  #projects-table tbody tr td:last-child {
+    border-bottom: none;
+  }
+
+  #projects-table tbody tr td::before {
+    content: attr(data-label);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7b7c9a;
+    min-width: 90px;
+    flex-shrink: 0;
+    padding-top: 0.1rem;
+  }
 }
 
 /* ── Project thumbnails ──────────────────────────────────── */

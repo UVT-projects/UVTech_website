@@ -89,6 +89,7 @@ function makePlaceholder() {
 
 function buildImgCell(data) {
   var td = document.createElement('td');
+  td.dataset.label = 'Imagine';
   if (data.img) {
     var img = document.createElement('img');
     img.src = data.img;
@@ -154,14 +155,17 @@ function addProjectRow(data) {
   storeData(tr, data);
 
   var tdName = document.createElement('td');
+  tdName.dataset.label = 'Proiect';
   tdName.textContent = data.name;
   tr.appendChild(tdName);
 
   var tdDesc = document.createElement('td');
+  tdDesc.dataset.label = 'Descriere';
   tdDesc.textContent = data.desc;
   tr.appendChild(tdDesc);
 
   var tdUrl = document.createElement('td');
+  tdUrl.dataset.label = 'URL';
   var link = document.createElement('a');
   link.href = data.url;
   link.textContent = 'Viziteaza';
@@ -171,16 +175,19 @@ function addProjectRow(data) {
   tr.appendChild(tdUrl);
 
   var tdTech = document.createElement('td');
+  tdTech.dataset.label = 'Tehnologii';
   tdTech.textContent = data.tech;
   tr.appendChild(tdTech);
 
   tr.appendChild(buildImgCell(data));
 
   var tdDate = document.createElement('td');
+  tdDate.dataset.label = 'Data';
   tdDate.textContent = formatDate(data.date);
   tr.appendChild(tdDate);
 
   var tdActions = document.createElement('td');
+  tdActions.dataset.label = 'Actiuni';
   tdActions.appendChild(makeEditButton(tr, data.name));
   tr.appendChild(tdActions);
 
